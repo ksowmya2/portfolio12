@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kinthali Sowmya</title>
+  <link rel="stylesheet" href="style.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Global styles */
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #1f242d;
+        color: #f5f5f5;
+        padding: 20px;
+    }
+
+    .skills {
+        text-align: center;
+        width: 100%;
+        max-width: 1200px;
+    }
+
+    .skills h2 {
+        font-size: 4.5rem;
+        color: #0ef;
+        margin-bottom: 1rem;
+        animation: fadeInDown 0.8s ease-in-out;
+    }
+
+    .skill-section {
+        background-color: #323946;
+        padding: 1.5rem;
+        border-radius: 10px;
+        width: 900px;
+        height: 400px;
+        margin: 2rem auto; /* Center skill-section horizontally */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        text-align: center; /* Center align content inside */
+    }
+
+    .skill-section h3 {
+        margin-top: 4rem;
+        font-size: 1.8rem;
+        color: rgb(255, 255, 255);
+        margin-bottom: 3rem;
+    }
+
+    .skills-container {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .skill-card {
+        width: 120px;
+        text-align: center;
+        color: #f5f5f5;
+        padding: 10px;
+        background-color: #2b2f38;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease, background-color 0.3s ease;
+        animation: fadeInUp 1s ease;
+    }
+
+    .skill-card:hover {
+        transform: scale(1.05);
+        background-color: #3a3f4c;
+    }
+
+    .image-container {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        margin: 0 auto 10px;
+        border-radius: 50%;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+    }
+
+    .image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        background-color: #3a3f4c;
+        border-radius: 50%;
+    }
+
+    .percentage {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #0ef;
+        font-size: 1.2rem;
+        font-weight: bold;
+        background-color: rgba(0, 0, 0, 0.8);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        border-radius: 50%;
+    }
+
+    .image-container:hover .percentage {
+        opacity: 1;
+    }
+
+    .skill-card span {
+        display: block;
+        font-size: 1rem;
+        font-weight: 600;
+        padding: 5px;
+        background-color: #2b2f38;
+        border-radius: 5px;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInDown {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .skills h2 {
+            font-size: 2.5rem;
+        }
+
+        .skill-section {
+            padding: 1rem;
+            width: 100%;
+        }
+
+        .skill-card {
+            width: 100px;
+        }
+
+        .skills-container {
+            flex-direction: column;
+        }
+    }
+
+    /* Responsive Design */
+@media (max-width: 480px) {
+.skills h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.skill-section {
+    padding: 1rem;
+    width: 100%;
+    margin: 1rem 0; 
+}
+
+.skills-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.skill-card {
+    width: 80px;
+    padding: 5px;
+    margin: 0.5rem;
+    text-align: center;
+}
+
+.image-container {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+}
+
+.skill-card span {
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+}
+}
+
+/* @media (max-width: 480px) and (min-width: 361px) {
+.skills h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.skill-section h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+.skill-section {
+    padding: 1rem;
+    width: 100%;
+    margin: 1rem 0;
+}
+
+.skills-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+} */
+
+/* Further adjustments for screens 360px and below */
+@media (max-width: 360px) {
+.skills h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.skill-section h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.skill-section {
+    padding: 1rem;
+    width: 100%;
+    margin: 1rem 0;
+}
+
+.skills-container {
+    flex-direction: row;
+    gap: 0.8rem;
+    align-items: center;
+}
+
+.skill-card {
+    width: 80px;
+    padding: 5px;
+}
+
+.image-container {
+    width: 50px;
+    height: 50px;
+}
+
+.percentage {
+    font-size: 0.9rem;
+}
+
+.skill-card span {
+    font-size: 0.8rem;
+}
+}
+
+
+@media (max-width: 360px) {
+.skills h2 {
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
+}
+
+.skill-section h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.skill-section {
+    padding: 0.8rem;
+    width: 100%;
+}
+
+.skills-container {
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.skill-card {
+    width: 60px;
+    padding: 4px;
+    margin: 0.4rem;
+}
+
+.image-container {
+    width: 50px;
+    height: 50px;
+}
+
+.percentage {
+    font-size: 0.9rem;
+}
+
+.skill-card span {
+    font-size: 0.75rem;
+}
+}
+
+</style>
+</head>
+<body>
+  <!-- navbar -->
+  <header class="header">
+      <a class="logo" href="#">KS<span>.</span></a>
+      <i class='bx bx-menu' id="menu-icon"></i>
+      <nav class="navbar">
+        <a href="#home" style="--i:1;">Home</a>
+        <a href="#education" style="--i:2;">About Me</a>
+        <a href="#home" style="--i:3;">Skills</a>
+        <a href="#home" style="--i:4;">Projects</a>
+        <a href="#contact" style="--i:5;">Contact</a>
+      </nav>
+      
+      <div class="resume-btn">
+        <button id="resume-toggle">Resume ▼</button>
+        <div class="dropdown-menu" id="dropdown-menu">
+          <a href="images/KINTHALI SOWMYA -RESUME.pdf" target="_blank">View</a>
+          <a href="images/KINTHALI SOWMYA -RESUME.pdf" download target="_blank" class="download-btn" title="Download Resume"><i class="fa-solid fa-download"></i> Download</a>
+        </div>
+      </div>
+  </header>
+
+  <!-- home -->
+   <section class="home" id="home">
+      <div class="home-content">
+        <h3>Hello</h3>
+        <h1>I'M Kinthali Sowmya</h1>
+        <h3><span class="multiple-text"></span></h3>
+        <p>
+          I’m passionate about blending creativity and technology, and I’m excited to start my journey as a UI/UX Designer and Frontend Developer. With a focus on designing intuitive, user-friendly interfaces and developing seamless web experiences, I aim to bring ideas to life in a way that captivates users and enhances their digital journey.
+        </p>
+        <div class="social-media">
+              <a href="#" style="--i:7;"><i class='bx bxl-linkedin'></i></a>
+              <a href="#" style="--i:8;"><i class='bx bxl-github'></i></a>
+        </div>
+        <a href="#" class="btn">Explore</a>
+      </div>
+      <div class="home-img">
+         <img src="images/sowmya2.jpg" alt="profileimg" style="border-radius: 50%;">
+      </div>
+   </section>
+   <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+   <script src="script.js"></script>
+
+  <!-- education -->
+  <section class="services" id="education">
+    <h2 class="heading-edu">
+       <span style="text-align: center; font-size: 7rem;">Education</span>
+    </h2>
+    <div class="services-container">
+      <div class="services-box">
+        <h3><i class="fa-solid fa-graduation-cap"></i> &nbsp;&nbsp;B.Tech</h3>
+        <h2>GMR Institute of Technology</h2>
+        <h2>Information Technology</h2>
+        <h2>2020-2024</h2>
+      </div>
+      <div class="services-box">
+        <h3><i class="fa-solid fa-book-open"></i> &nbsp;&nbsp;Intermediate</h3>
+        <h2>Sri Chaitanya Junior College</h2>
+        <h2>MPC</h2>
+        <h2>2018-2020</h2>
+      </div>
+      <!-- School Section -->
+      <div class="services-box">
+        <h3><i class="fa-solid fa-chalkboard"></i> &nbsp;&nbsp;Secondary School</h3>
+        <h2>Siddhartha Public School</h2>
+        <h2>General Studies</h2>
+        <h2>2017-2018</h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="skills">
+    <h2>Skills</h2>
+
+    <!-- Programming Skills Section -->
+    <div class="skill-section">
+        <h3>Programming Skills</h3>
+        <div class="skills-container">
+            <div class="skill-card">
+                <div class="image-container">
+                    <img src="images/java4-removebg-preview.png" alt="Java" />
+                    <div class="percentage">85%</div>
+                </div>
+                <span>Java</span>
+            </div>
+            <div class="skill-card">
+                <div class="image-container">
+                    <img src="images/py1-removebg-preview (1).png" alt="Python" />
+                    <div class="percentage">90%</div>
+                </div>
+                <span>Python</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Developing Skills Section -->
+    <div class="skill-section">
+        <h3>Developing Skills</h3>
+        <div class="skills-container">
+            <div class="skill-card">
+                <div class="image-container">
+                    <img src="images/html5_16183594-removebg-preview.png" alt="HTML" />
+                    <div class="percentage">95%</div>
+                </div>
+                <span>HTML</span>
+            </div>
+            <div class="skill-card">
+                <div class="image-container">
+                    <img src="images/css_888847.png" alt="CSS"/>
+                    <div class="percentage">90%</div>
+                </div>
+                <span>CSS</span>
+            </div>
+            <div class="skill-card">
+                <div class="image-container">
+                    <img src="images/boot-removebg-preview.png" alt="Bootstrap" />
+                    <div class="percentage">85%</div>
+                </div>
+                <span>Bootstrap</span>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- contact -->
+  <section class="contact" id="contact" style="font-family: 'Arial', sans-serif; background-color:#1f242d; color: #333;">
+    <div class="flex items-center min-h-screen bg-gray-100 dark:bg-gray-900">
+      <div class="container mx-auto">
+        <div class="max-w-xl mx-auto my-10 bg-white p-5 rounded-md shadow-lg dark:bg-[#1f242d] dark:text-white">
+          <div class="text-center">
+            <h1 class="heading5 my-3 text-3xl font-semibold text-gray-700 dark:text-gray-200" style="text-align: center; font-size: 50px;color: #f5f5f5;margin-bottom: 50px;">Contact<span> Me!</span> </h1>
+          </div>
+          <div class="m-7">
+            <form action="https://api.web3forms.com/submit" method="POST" id="form">
+              <input type="hidden" name="access_key" value="3a9bcb9b-f68a-418b-b089-f011fcca5884" />
+              <input type="hidden" name="subject" value="New Submission from Web3Forms" />
+              <input type="checkbox" name="botcheck" id="" style="display: none;" />
+
+              <div class="flex mb-6 space-x-4">
+                <div class="w-full md:w-1/2 input-box" style="text-align: center;margin-bottom: 10px;">
+                  <input type="text" name="name" id="first_name" placeholder="First Name" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-[#323946] dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" style="background-color: #323946; padding: 10px 20px; border-radius: 10px; margin-right:12px;width: 250px;" />
+                  <input type="text" name="last_name" id="lname" placeholder="Last Name" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-[#323946] dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" style="background-color: #323946; padding: 10px 20px; border-radius: 10px;width: 250px;" />
+                </div>
+              </div>
+
+              <div class="flex mb-6">
+                <input type="email" name="email" id="email" placeholder="Email Address" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-[#323946] dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" style="background-color: #323946; padding: 10px 20px; border-radius: 10px;width: 510px;"/>
+              </div>
+              <div class="flex mb-6">
+                <textarea name="message" id="message" placeholder="Your message" rows="4" class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-[#323946] dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" style="background-color: #323946; padding: 10px 20px; border-radius: 10px;width: 510px;"></textarea>
+              </div>
+              <div class="m-5 flex justify-center">
+                <button type="submit" class="w-52 px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-indigo-600 rounded-md hover:bg-indigo-500 focus:outline-none focus:ring focus:ring-indigo-200 focus:ring-opacity-50">Send Message</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

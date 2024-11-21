@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <style>
+        :root {
+    --bg-color: #1f242d;
+    --second-bg-color: #323946;
+    --text-color: #fff;
+    --main-color: #0ef;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.portfolio {
+    background: var(--second-bg-color);
+    padding: 2rem;
+}
+
+.portfolio-heading {
+    text-align: center;
+    margin-bottom: 4rem;
+    font-size: 5.5rem;
+    color: var(--text-color);
+}
+
+.portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+.portfolio-box {
+    
+    border-radius: 2rem;
+    box-shadow: 0 2rem 4rem var(--second-bg-color--bg-color);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+
+
+.portfolio-box img {
+    /* background: linear-gradient(to bottom, #fff, #0ef); */
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Added opacity transition */
+}
+
+.portfolio-box:hover img {
+    transform: scale(1.1);
+    opacity: 0.3; /* Decrease the opacity on hover */
+}
+
+/* .portfolio-box:hover img {
+    transform: scale(1.1);
+} */
+
+.portfolio-layer {
+    /* background: linear-gradient(to bottom, #fff, #0ef); */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.portfolio-box:hover .portfolio-layer {
+    opacity: 1;
+}
+
+.portfolio-layer .button-group {
+    display: flex;
+    gap: 3rem; /* Space between buttons */
+}
+
+.portfolio-layer button {
+    padding: 0.8rem 1.5rem;
+    background: white;
+    border: none;
+    border-radius: 5px;
+    color: black;
+    font-size: 1.7rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+/* .overlay{
+           height: 300px;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: linear-gradient(transparent,#598886);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 5px;
+        } */
+.portfolio-layer button:hover {
+    background: var(--main-color);
+    color: white;
+}
+.portfolio-layer p{
+    font-size: 18px;
+    margin-bottom: 1.5rem;
+}
+.portfolio-card {
+    background: #111b2c;
+    color: var(--text-color);
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+}
+
+.portfolio-card h4 {
+    font-size: 2.6rem;
+    margin-top: 1rem;
+}
+
+.portfolio-card p {
+    font-size: 1.3rem;
+    margin-top: 0.5rem;
+    color: #bbb;
+}
+.portfolio-container {
+            width: 90%;
+            max-width: 1200px;
+            height: 350px;
+            margin: 0 auto;
+        }
+        .items-links {
+            width: 60%;
+            margin: 40px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+        }
+        
+        .item-link {
+            border: 2px solid #0ef;
+            padding: 10px 30px;
+            font-size: 18px;
+            font-weight: 500;
+            color: #0ef;
+            cursor: pointer;
+            border-radius: 30px;
+            transition: .4s ease;
+        }
+        
+        .item-link:hover {
+            background: #0ef;
+            color: #fff;
+        }
+        .menu-active {
+            background: #0ef;
+            color: #fff;
+        }
+  
+
+
+    </style>
+    <script src="script.js"></script>
+</head>
+<body>
+    <section class="portfolio" id="portfolio">
+        <div class="items-links">
+            <span class="item-link menu-active" data-name="all">All Projects</span>
+            <span class="item-link" data-name="Dev">Development</span>
+            <span class="item-link" data-name="Design">Designing</span>
+        </div>
+        
+        <h2 class="portfolio-heading">
+            <span>Projects</span>
+        </h2>
+        <div class="portfolio-container developing">
+            <!-- Portfolio Item 1 -->
+            <div class="portfolio-box" data-name="Dev">
+                <img src="images/Screenshot (166).png" alt="HTML Project">
+                <div class="portfolio-layer">
+                    <p>HTML And CSS Project</p>
+                    <div class="button-group">
+                        <button>Live Demo</button>
+                        <button>Github</button>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <h4>V-Trava Webpage</h4>
+                    <p>A user-friendly travel website that features destinations, tour packages, blogs, and booking choices, allowing users to easily organize their vacations.</p>
+                </div>
+            </div>
+            
+            
+            <!-- Portfolio Item 2 -->
+            <div class="portfolio-box" data-name="Dev">
+                <img src="images/Screenshot (167).png" alt="Figma Design">
+                <div class="overlay">
+                <div class="portfolio-layer">
+                    <p>JavaScript Project</p>
+                    <div class="button-group">
+                        <button>Live Demo</button>
+                        <button>Github</button>
+                    </div>
+                </div>
+                </div>
+                <div class="portfolio-card">
+                    <h4>CartBloom</h4>
+                    <p>A shopping website using JavaScript offers an interactive experience with real-time product updates, smooth transitions and enhancing the overall shopping journey.</p>
+                </div>
+            </div>
+            <!-- Portfolio Item 3 -->
+            <div class="portfolio-box" data-name="Dev">
+                <img src="images/Screenshot (168).png" alt="JavaScript Project">
+                <div class="portfolio-layer">
+                    <p>JavaScript Project</p>
+                    <div class="button-group">
+                        <button>Live Demo</button>
+                        <button>Github</button>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <h4>Smart Transaction Hub</h4>
+                    <p>A JavaScript transaction project handles secure data or financial transfers, using front-end interfaces, back-end logic (Node.js), and APIs or databases for processing and storage.</p>
+                </div>
+            </div>
+          
+        </div>
+<div class="portfolio-container desiging" style="margin-top: 40px;">
+   <!-- Portfolio Item 4 -->
+   <div class="portfolio-box" data-name="Design">
+    <img src="images/Screenshot (169).png" alt="JavaScript Project">
+    <div class="portfolio-layer">
+        <p>ReactJS Project</p>
+        <div class="button-group">
+            <button>Live Demo</button>
+            <button>Preview</button>
+        </div>
+    </div>
+    <div class="portfolio-card">
+        <h4>Smart Transaction Hub</h4>
+        <p>A ReactJS floral website provides a dynamic user experience that includes real-time filtering, an intuitive shopping cart, and seamless navigation, making it simple to browse and purchase floral collections.</p>
+    </div>
+</div>
+  <!-- Portfolio Item 5 -->
+  <div class="portfolio-box" data-name="Design">
+    <img src="images/Screenshot (172).png" alt="WordPress Dynamic Website">
+    <div class="portfolio-layer">
+        <p>WordPress Dynamic Website</p>
+        <div class="button-group">
+            <button>Live Demo</button>
+            <button>Github</button>
+        </div>
+    </div>
+    <div class="portfolio-card">
+        <h4>Smart Transaction Hub</h4>
+        <p>A JavaScript transaction project handles secure data or financial transfers, using front-end interfaces, back-end logic (Node.js), and APIs or databases for processing and storage.</p>
+    </div>
+</div>
+  <!-- Portfolio Item 6 -->
+  <div class="portfolio-box" data-name="Design">
+    <img src="images/Screenshot (173).png" alt="JavaScript Project">
+    <div class="portfolio-layer">
+        <p>WordPress Ststic Website</p>
+        <div class="button-group">
+            
+            <button>Preview</button>
+        </div>
+    </div>
+    <div class="portfolio-card">
+        <h4>Smart Transaction Hub</h4>
+        <p>A JavaScript transaction project handles secure data or financial transfers, using front-end interfaces, back-end logic (Node.js), and APIs or databases for processing and storage.</p>
+    </div>
+</div>
+        </div>
+
+        <div class="portfolio-container desiging" style="margin-top: 40px;">
+            <!-- Portfolio Item 7 -->
+            <div class="portfolio-box" data-name="Design">
+             <img src="images/Macbook Mockup Front View UV.png" alt="JavaScript Project">
+             <div class="portfolio-layer">
+                 <p>ReactJS Project</p>
+                 <div class="button-group">
+                     
+                     <button>Preview</button>
+                 </div>
+             </div>
+             <div class="portfolio-card">
+                 <h4>Smart Transaction Hub</h4>
+                 <p>A ReactJS floral website provides a dynamic user experience that includes real-time filtering, an intuitive shopping cart, and seamless navigation, making it simple to browse and purchase floral collections.</p>
+             </div>
+         </div>
+           <!-- Portfolio Item 8 -->
+           <div class="portfolio-box" data-name="Design">
+             <img src="images/MacBook Mockup, Floating.png" alt="WordPress Dynamic Website" >
+             <div class="portfolio-layer">
+                 <p>WordPress Dynamic Website</p>
+                 <div class="button-group">
+                     
+                     <button>Preview</button>
+                 </div>
+             </div>
+             <div class="portfolio-card">
+                 <h4>Smart Transaction Hub</h4>
+                 <p>A JavaScript transaction project handles secure data or financial transfers, using front-end interfaces, back-end logic (Node.js), and APIs or databases for processing and storage.</p>
+             </div>
+         </div>
+           <!-- Portfolio Item 9 -->
+           <div class="portfolio-box" data-name="Design">
+             <img src="images/Screenshot (182).png" alt="JavaScript Project">
+             <div class="portfolio-layer">
+                 <p>WordPress Static Website</p>
+                 <div class="button-group">
+                     
+                     <button>Preview</button>
+                 </div>
+             </div>
+             <div class="portfolio-card">
+                 <h4>Smart Transaction Hub</h4>
+                 <p>A JavaScript transaction project handles secure data or financial transfers, using front-end interfaces, back-end logic (Node.js), and APIs or databases for processing and storage.</p>
+             </div>
+         </div>
+                 </div>
+
+                 <div class="portfolio-container desiging" style="margin-top: 40px;">
+                    <!-- Portfolio Item 10 -->
+                    <div class="portfolio-box" data-name="Design">
+                     <img src="images/Neutral Modern New Website Mockup Instagram Post" alt="JavaScript Project" style="object-fit: fill;">
+                     <div class="portfolio-layer">
+                         <p>Poster</p>
+                         <div class="button-group">
+                             <button>Preview</button>
+                         </div>
+                     </div>
+                     <div class="portfolio-card">
+                         <h4>Smart Transaction Hub</h4>
+                         <p>A ReactJS floral website provides a dynamic user experience that includes real-time filtering, an intuitive shopping cart, and seamless navigation, making it simple to browse and purchase floral collections.</p>
+                     </div>
+                 </div>
+                   <!-- Portfolio Item 11 -->
+                   <div class="portfolio-box" data-name="Design">
+                     <img src="images/Screenshot (176).png" alt="WordPress Dynamic Website" >
+                     <div class="portfolio-layer overlay">
+                         <p>WordPress Dynamic Website</p>
+                         <div class="button-group">
+                             <button>Preview</button>
+                         </div>
+                     </div>
+                     <div class="portfolio-card">
+                         <h4>Smart Transaction Hub</h4>
+                         <p>A JavaScript transaction project handles secure data or financial transfers, using front-end interfaces, back-end logic (Node.js), and APIs or databases for processing and storage.</p>
+                     </div>
+                 </div>
+                   <!-- Portfolio Item 12 -->
+                   <div class="portfolio-box" data-name="Design">
+                     <img src="images/Screenshot (173).png" alt="JavaScript Project">
+                     <div class="portfolio-layer">
+                         <p>WordPress Ststic Website</p>
+                         <div class="button-group">
+                             
+                             <button>Preview</button>
+                         </div>
+                     </div>
+                     <div class="portfolio-card">
+                         <h4>Smart Transaction Hub</h4>
+                         <p>A JavaScript transaction project handles secure data or financial transfers, using front-end interfaces, back-end logic (Node.js), and APIs or databases for processing and storage.</p>
+                     </div>
+                 </div>
+                         </div>
+    </section>
+    
+</body>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+            :root {
+    --bg-color: #1f242d;
+    --second-bg-color: #323946;
+    --text-color: #fff;
+    --main-color: #0ef;
+}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Seagoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+
+        #Projects {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .ctn {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .items-links1 {
+            display: flex;
+            justify-content: center;
+            margin: 40px auto;
+            gap: 20px;
+        }
+
+        .item-link1 {
+            border: 2px solid #0ef;
+            padding: 10px 20px;
+            border-radius: 30px;
+            color: #0ef;
+            font-weight: 500;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .item-link1:hover,
+        .menu-active {
+            background-color: #0ef;
+            color: white;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .project-img {
+            border-radius: 12px;
+            overflow: hidden;
+            height: 14rem;
+            position: relative;
+            display: none; /* Default hidden */
+            transition: all 0.3s ease-in-out;
+        }
+
+        .project-img.show {
+            display: block; /* Visible when 'show' is added */
+        }
+
+       .project-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .project-img:hover img {
+            opacity: 0.3;
+            transform: scale(1.1);
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(transparent, #2b3d52);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+           
+            transition: opacity 0.3s ease;
+        }
+        .project-img .overlay {
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.3s ease;
+}
+.project-img:hover .overlay {
+    opacity: 1; /* Show overlay on hover */
+}
+/* 
+        .project-img:hover .overlay {
+            opacity: 1;
+        } */
+
+        .overlay h4 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    opacity: 1; /* Ensure the text inside is visible */
+}
+
+        .overlay .action-aria a {
+            margin: 5px;
+            text-decoration: none;
+        }
+        .btn2{
+            color: black;
+            font-weight: 600;
+            font-size: 16px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 7px 8px;
+        }
+        .bt1{
+            color: black;
+            font-size: 16px;
+            font-weight: 700; 
+        }
+        .bt1:hover{
+            color: black;
+            font-weight: 600;
+            font-size: 16px;
+            background-color: #0ef;
+            border-radius: 10px;
+            padding: 7px 8px;
+        }
+        .btn2:hover{
+            color: black;
+            font-weight: 600;
+            font-size: 16px;
+            background-color: #0ef;
+            border-radius: 10px;
+            padding: 7px 8px;
+        }
+    </style>
+</head>
+
+<body>
+   
+
+    <section id="Projects" style="background-color: var(--second-bg-color);color: white;">
+        <h1>PORTFOLIO WORKS</h1>
+        <div class="container ctn">
+            <div class="items-links1">
+                <span class="item-link1 menu-active" data-name="all">All Projects</span>
+                <span class="item-link1" data-name="Dev">Development</span>
+                <span class="item-link1" data-name="Design">Designing</span>
+            </div>
+            <div class="gallery">
+                <!-- Repeatable Project Image Block -->
+               
+                <div class="project-img" data-name="Dev">
+                    <img src="images/Screenshot (165).png" alt="">
+                    <div class="overlay">
+                        <h4>HTML and CSS Project</h4>
+                        <div class="action-aria">
+                            <a href="#" class="btn2">Live Demo</a>
+                            <a href="#" class=" bt1 ">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-img" data-name="Dev">
+                    <img src="images/Screenshot (167).png" alt="">
+                    <div class="overlay">
+                        <h4>JAVASCRIPT PROJECT</h4>
+                        <div class="action-aria">
+                            <a href="#" class="btn2 ">Live Demo</a>
+                            <a href="#" class="  bt1">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-img" data-name="Dev">
+                    <img src="images/Screenshot (190).png" alt="">
+                    <div class="overlay">
+                        <h4>JAVASCRIPT PROJECT</h4>
+                        <div class="action-aria">
+                            <a href="#" class="btn2 ">Live Demo</a>
+                            <a href="#" class=" bt1">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more projects as needed -->
+                <div class="project-img" data-name="Dev">
+                    <img src="images/Screenshot (168).png" alt="">
+                    <div class="overlay">
+                        <h4>JAVASCRIPT PROJECT</h4>
+                        <div class="action-aria">
+                            <a href="https://alekhyapalikala.Source Code.io/react/" target="_blank" class="btn2">Live Demo</a>
+                            <a href="" class=" bt1">Source Code</a>
+                        </div>
+                   </div>
+                </div>
+                <div class="project-img" data-name="Dev">
+                    <img src="images/Screenshot (169).png" alt="">
+                    <div class="overlay">
+                        <h4>REACT Project</h4>
+                        <div class="action-aria">
+                            <a href="https://alekhyapalikala.Source Code.io/alekhya1/" target="_blank" class="btn2">Live Demo</a>
+                            <a href="" class="bt1">Source Code</a>
+                        </div>
+                   </div>
+                </div>
+                <div class="project-img" data-name="Design">
+                    <img src="images/Screenshot (171).png" alt="">
+                    <div class="overlay">
+                        <h4>WORDPRESS</h4>
+                        <div class="action-aria">
+                           <a href="images/Screenshot (171).png"  target="_blank" class="btn2" >Live Demo</a>
+                        </div>
+                   </div>
+                </div>
+                <div class="project-img" data-name="Design">
+                    <img src="images/Screenshot (173).png" style="height: 100%;">
+                    <div class="overlay">
+                        <h4>WORDPRESS</h4>
+                        <div class="action-aria">
+                           <a href="images/coffee.1.png" target="_blank" class="btn2">Live Demo</a>
+                        </div>
+                   </div>
+                </div>
+                <div class="project-img" data-name="Design">
+                    <img src="images/Wall Sign Mockup.png" alt="">
+  
+                    <div class="overlay">
+                        <h4>FLYER</h4>
+                        <div class="action-aria">
+                            <a href="images/Screenshot (178).png" class="btn2" target="_blank">Preview</a>
+                        </div>
+                   </div>
+                </div>
+                <div class="project-img" data-name="Design">
+                    <img src="images/MacBook Mockup, Floating.png" alt="">
+                    
+                    <div class="overlay">
+                        <h4>POSTER</h4>
+                        <div class="action-aria">
+                            <a href="https://dev-alekhya2.pantheonsite.io/" class="btn2" target="_blank">Preview</a>
+                        </div>
+                   </div>
+                </div>
+                <div class="project-img" data-name="Design">
+                    <img src="images/Street Sign Mockup, Side View.png" alt="">
+                    <div class="overlay">
+                        <h4>POSTER</h4>
+                        <div class="action-aria">
+                            <a href="https://www.figma.com/proto/LdtuncvlxsWwI6UHXdw44z/Untitled?node-id=0-1&t=tf9V2Q7kGix682bc-1" class="btn2" target="_blank">Preview</a>
+                        </div>
+                   </div>
+                </div>
+                <div class="project-img" data-name="Design">
+                    
+                    <img src="images/Mobile App Screen Mockup, Mosaic (2).png" alt="">
+                    <div class="overlay">
+                        <h4>POSTER</h4>
+                        <div class="action-aria">
+                            <a href="images/Mobile App Screen Mockup, Mosaic (2).png" class="btn2" target="_blank">Live Demo</a>
+                        </div>
+                   </div>     
+                </div>
+                <div class="project-img" data-name="Design">
+                    
+                    <img src="images/Mobile App Screen Mockup, Mosaic (2).png" alt="">
+                    <div class="overlay">
+                        <h4>MOBILE APPLICATION</h4>
+                        <div class="action-aria">
+                            <a href="images/digital.jpg" class="btn2" target="_blank">Live Demo</a>
+                        </div>
+                   </div>     
+                </div>
+                <div class="project-img" data-name="Design">
+                    
+                    <img src="images/Screenshot (189).png" alt="">
+                    <div class="overlay">
+                        <h4>WEB APPLICATION</h4>
+                        <div class="action-aria">
+                            <a href="https://www.figma.com/proto/QiGYThne5IsoOOVruf8aPO/Untitled?node-id=283-360&t=4xlcipj0uWkiq9av-1" class="btn2" target="_blank">Live Demo</a>
+                        </div>
+                   </div>     
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Selectors
+        const filterLinks = document.querySelectorAll('.item-link1');
+        const projectImages = document.querySelectorAll('.project-img');
+
+        // Function to display all images by default
+        const showAllImages = () => {
+            filterLinks[0].classList.add('menu-active'); // Ensure "All Projects" is active
+            projectImages.forEach(image => {
+                image.classList.add('show'); // Add the 'show' class to make images visible
+            });
+        };
+
+        // Event Listener for Filtering
+        filterLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                // Highlight active link
+                document.querySelector('.menu-active').classList.remove('menu-active');
+                link.classList.add('menu-active');
+
+                // Get filter name
+                const filterName = link.getAttribute('data-name');
+
+                // Show/hide images based on filter
+                projectImages.forEach(image => {
+                    const imageCategory = image.getAttribute('data-name');
+                    if (filterName === 'all' || imageCategory === filterName) {
+                        image.classList.add('show');
+                    } else {
+                        image.classList.remove('show');
+                    }
+                });
+            });
+        });
+
+        // Display all images on page load
+        window.addEventListener('load', showAllImages);
+    </script>
+</body>
+
+</html>
